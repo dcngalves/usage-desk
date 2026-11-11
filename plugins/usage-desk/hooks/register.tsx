@@ -35,6 +35,7 @@ const COSTUMES = [
   { value: 'medium', label: 'Chef' },
   { value: 'light', label: 'Racer' },
   { value: 'explore', label: 'Pirate' },
+  { value: 'science', label: 'Scientist' },
 ]
 
 const STATE = { plugin: 'usage-desk' } as const

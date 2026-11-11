@@ -7,6 +7,7 @@ const TIER_COLOR: Record<string, string> = {
   medium: '#378ADD',
   light: '#1D9E75',
   explore: '#1D9E75',
+  science: '#7BC043',
   other: '#888780',
 }
 const colorOf = (tier: string): string => TIER_COLOR[tier] ?? '#888780'
@@ -67,6 +68,9 @@ export const MASCOT_CSS = `<style>
 @keyframes wave{50%{transform:skewY(-12deg) scaleX(.85)}}
 .c-explore.run .it{transform-origin:50% 100%;animation:fence .5s ease-in-out infinite}
 @keyframes fence{50%{transform:rotate(25deg)}}
+.c-science.run .it{transform-origin:50% 100%;animation:swirl 1s ease-in-out infinite}
+.c-science.run .bub{animation:fizz .5s steps(1) infinite}
+@keyframes swirl{25%{transform:rotate(-8deg)}75%{transform:rotate(8deg)}}@keyframes fizz{50%{transform:translateY(-1px);opacity:.3}}
 @media (prefers-reduced-motion: reduce){.run,.run g{animation:none!important}}
 </style>`
 
@@ -113,6 +117,19 @@ const COSTUMES: Record<string, (f: Fill, t: string) => void> = {
     stamp(f, 5, 4, ['........kkkk........', '.....kkkkkkkkkk.....', '..kkkkkkkwwkkkkkkk..', '.kkkkkkkkkkkkkkkkkk.', '..gggggggggggggggg..'], { k: '#55514C', w: '#F8F6F1', g: '#F5C542' })
     f(8, 10, 9, 1, INK); f(17, 11, 4, 4, INK)
     f(26, 6, 1, 9, '#C9CCD2', 'it'); f(25, 15, 3, 1, '#7A4A26', 'it')
+  },
+  // Scientist: lab coat and safety goggles; swirls a flask that fizzes.
+  science: (f, t) => {
+    owlBody(f, -4, 'it')
+    f(7, 15, 4, 7, '#F4F3EE'); f(19, 15, 4, 7, '#F4F3EE')
+    f(11, 15, 1, 3, '#D2D1C8'); f(18, 15, 1, 3, '#D2D1C8')
+    f(8, 19, 2, 1, '#D2D1C8'); f(9, 17, 1, 2, t)
+    f(7, 12, 1, 1, '#3A3A3C'); f(22, 12, 1, 1, '#3A3A3C'); f(14, 12, 2, 1, '#3A3A3C')
+    stamp(f, 8, 10, ['kkkkkk', 'k....k', 'k....k', 'k....k', 'k....k', 'kkkkkk'], { k: '#3A3A3C' })
+    stamp(f, 16, 10, ['kkkkkk', 'k....k', 'k....k', 'k....k', 'k....k', 'kkkkkk'], { k: '#3A3A3C' })
+    f(9, 11, 4, 4, 'rgba(169,214,245,.3)'); f(17, 11, 4, 4, 'rgba(169,214,245,.3)')
+    stamp(f, 24, 3, ['.ggg.', '..g..', '..g..', '.glg.', 'glllg', 'glllg', 'ggggg'], { g: '#DCE6EC', l: t }, 'it')
+    f(26, 1, 1, 1, t, 'bub'); f(27, 0, 1, 1, t, 'bub')
   },
   other: f => owlBody(f),
 }
