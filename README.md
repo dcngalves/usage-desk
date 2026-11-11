@@ -8,7 +8,7 @@ Claude Code tells you when you hit a limit. Usage Desk shows you how close you a
 
 ## What it shows
 
-- **Your agent**: a little owl that walks while Claude works. Press it to pick an outfit, or press the name to rename it. Each subagent gets its own card.
+- **Your agent**: a little owl that walks while Claude works. Press it to pick one of eight outfits, from astronaut to scientist, or press the name to rename it. Each subagent gets its own card.
 - **Three bars**: the current chat's context, your 5-hour limit and your weekly limit. Press a bar to open its details.
 - **Current chat**: what fills the context window, by category. Press a category to read why it's high and what you can do about it.
 - **5 hours and weekly**: Claude's own percentage, then the chats and projects that used the most, with cached tokens kept separate.
@@ -44,6 +44,14 @@ On an older Claude Code, add the marketplace first, then install:
 /plugin marketplace update usage-desk
 /plugin uninstall usage-desk
 ```
+
+## What it costs in tokens
+
+- **Installing: none.** `/plugin install` runs on your computer and never calls Claude.
+- **Running: none.** The panel reads Claude Code's own logs and figures. `/usage-desk` is answered by the panel itself, not by Claude.
+- **Keep warm and Compact** are the only things that use your limit, and only when you press them. Each Keep warm ping is one tiny request that re-reads the chat from cache.
+
+Using Cowork? There's a separate version: [Usage Desk for Cowork](https://github.com/dcngalves/usage-desk-cowork).
 
 ## Your data stays on your computer
 
