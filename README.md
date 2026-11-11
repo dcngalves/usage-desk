@@ -1,6 +1,6 @@
 # Usage Desk
 
-A side panel for Claude Code that shows where your usage goes, while you work.
+A side panel for Claude Code that shows where your usage goes and how to decrease it, while you work.
 
 ![The Usage Desk owl in each of its outfits](docs/mascots.svg)
 
