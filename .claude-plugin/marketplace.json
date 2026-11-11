@@ -1,0 +1,13 @@
+{
+  "name": "usage-desk",
+  "owner": { "name": "dcngalves", "url": "https://github.com/dcngalves" },
+  "description": "Usage Desk for Claude Code",
+  "plugins": [
+    {
+      "name": "usage-desk",
+      "source": "./plugins/usage-desk",
+      "description": "A side panel that shows where your Claude Code usage goes: 5-hour and weekly bars, the current chat's context, and plain-language explanations",
+      "version": "0.5.0"
+    }
+  ]
+}

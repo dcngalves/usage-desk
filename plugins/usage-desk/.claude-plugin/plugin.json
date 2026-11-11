@@ -1,0 +1,11 @@
+{
+  "name": "usage-desk",
+  "version": "0.5.0",
+  "description": "A side panel that shows where your Claude Code usage goes: 5-hour and weekly bars, the current chat's context, and plain-language explanations",
+  "author": { "name": "dcngalves", "url": "https://github.com/dcngalves" },
+  "homepage": "https://github.com/dcngalves/usage-desk",
+  "repository": "https://github.com/dcngalves/usage-desk",
+  "license": "MIT",
+  "keywords": ["usage", "tokens", "limits", "context", "panel"],
+  "types": "./types/index.d.ts"
+}
